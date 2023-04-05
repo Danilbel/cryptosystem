@@ -1,0 +1,37 @@
+.header {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.header__inner {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid;
+}
+
+.logo {
+  font-size: 36px;
+}
+
+.menu__list {
+  display: flex;
+  gap: 35px;
+
+  font-size: 20px;
+}
+
+.menu__list-link {
+  padding: 8px 12px;
+  border-radius: 10px;
+  opacity: 0.7;
+  border: 2px solid transparent;
+  transition: opacity, border-color .3s linear;
+
+  &:hover {
+    opacity: 1;
+    border-color: $text-color;
+  }
+}

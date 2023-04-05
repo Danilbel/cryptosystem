@@ -1,0 +1,76 @@
+.crypto {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 15px;
+  border: 2px solid $border-crypto-color;
+}
+
+.crypto-title {
+  padding-bottom: 20px;
+  font-size: 34px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.crypto__form {
+  padding: 18px 0 18px 18px;
+  border-radius: 15px;
+  border: 2px solid $border-crypto-form-color;
+  background-color: $background-crypto-form-color;
+}
+
+.form__editor {
+  display: flex;
+  margin-bottom: 18px;
+}
+
+.form__editor-textarea {
+  width: 80%;
+  height: 450px;
+  padding: 8px;
+
+  resize: none;
+
+  border-radius: 10px;
+  border: 2px solid $border-crypto-form-color;
+  background-color: $background-crypto-form-color;
+}
+
+.form__editor-buttons {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.form__posting {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.posting__menu {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.input-key {
+  width: 80%;
+  height: 45px;
+  padding: 8px;
+  border-radius: 10px;
+  border: 2px solid $border-crypto-form-color;
+  background-color: $background-crypto-form-color;
+}
+
+.key__inner {
+  display: flex;
+  gap: 20px;
+}
+

@@ -1,0 +1,24 @@
+.btn {
+  padding: 8px 0;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid $border-crypto-color;
+
+  opacity: .8;
+  transition: opacity .1s linear;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.btn-editor {
+  width: 150px;
+  text-align: center;
+  background-color: $btn-editor-color;
+}
+
+.btn-post {
+  width: 150px;
+  background-color: $btn-post-color;
+}
