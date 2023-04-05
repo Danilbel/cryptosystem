@@ -1,0 +1,264 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+textarea, input {
+  outline: none;
+  font-size: inherit;
+}
+
+body {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #000;
+  background-color: #c29c9c;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1220px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.main {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  padding: 8px 0;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid #867e7e;
+  opacity: 0.8;
+  transition: opacity 0.1s linear;
+}
+.btn:hover {
+  opacity: 1;
+}
+
+.btn-editor {
+  width: 150px;
+  text-align: center;
+  background-color: #ada8a8;
+}
+
+.btn-post {
+  width: 150px;
+  background-color: #a98c8c;
+}
+
+.choice__key {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.choice-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.choice-radio-key {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  opacity: 0.8;
+  transition: opacity 0.1s linear;
+}
+.choice-radio-key:hover {
+  opacity: 1;
+}
+.choice-radio-key:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ada8a8;
+  border: 2px solid #867e7e;
+}
+.choice-radio-key:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #857777;
+  transform: translate(-50%, -50%);
+  visibility: visible;
+}
+
+.header {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.header__inner {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid;
+}
+
+.logo {
+  font-size: 36px;
+}
+
+.menu__list {
+  display: flex;
+  gap: 35px;
+  font-size: 20px;
+}
+
+.menu__list-link {
+  padding: 8px 12px;
+  border-radius: 10px;
+  opacity: 0.7;
+  border: 2px solid transparent;
+  transition: opacity, border-color 0.3s linear;
+}
+.menu__list-link:hover {
+  opacity: 1;
+  border-color: #000;
+}
+
+.crypto {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 15px;
+  border: 2px solid #867e7e;
+}
+
+.crypto-title {
+  padding-bottom: 20px;
+  font-size: 34px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.crypto__form {
+  padding: 18px 0 18px 18px;
+  border-radius: 15px;
+  border: 2px solid #a69898;
+  background-color: #ccaeae;
+}
+
+.form__editor {
+  display: flex;
+  margin-bottom: 18px;
+}
+
+.form__editor-textarea {
+  width: 80%;
+  height: 450px;
+  padding: 8px;
+  resize: none;
+  border-radius: 10px;
+  border: 2px solid #a69898;
+  background-color: #ccaeae;
+}
+
+.form__editor-buttons {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.form__posting {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.posting__menu {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.input-key {
+  width: 80%;
+  height: 45px;
+  padding: 8px;
+  border-radius: 10px;
+  border: 2px solid #a69898;
+  background-color: #ccaeae;
+}
+
+.key__inner {
+  display: flex;
+  gap: 20px;
+}
+
+.footer__inner {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid;
+}
+
+.display-none {
+  display: none;
+}
+
+.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/*# sourceMappingURL=main.css.map */
