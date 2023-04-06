@@ -19,20 +19,7 @@
             <section class="crypto">
                 <h2 class="crypto-title">Gamma cipher</h2>
                 <form class="crypto__form" id="crypto-form">
-                    <div class="form__editor">
-                        <textarea class="form__editor-textarea" name="text" id="editor-textarea"
-                                  placeholder="Enter your message for encryption/decryption"
-                                  data-check-field
-                                  th:text="${result} ?: ''"></textarea>
-                        <div class="form__editor-buttons">
-                            <label class="btn btn-editor">
-                                Open
-                                <input class="display-none" type="file" id="open">
-                            </label>
-                            <label class="btn btn-editor" id="clear" data-editor-button>Clear</label>
-                            <label class="btn btn-editor" id="save" data-editor-button>Save</label>
-                        </div>
-                    </div>
+                    <div th:insert="blocks/form-editor :: form-editor"></div>
                     <div class="form__posting">
                         <div class="key__inner">
                             <input class="input-key" type="text" name="seed" placeholder="Seed" pattern="^-?[0-9]+$"
