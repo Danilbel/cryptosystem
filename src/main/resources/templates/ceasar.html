@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>CryptoSystem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/styles/main.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+    <header class="header" th:insert="blocks/header :: header"></header>
+    <main class="main">
+        <div class="container">
+            <section class="crypto">
+                <h2 class="crypto-title">Ceasar's cipher</h2>
+                <form class="crypto__form" id="crypto-form">
+                    <div class="form__editor">
+                        <textarea class="form__editor-textarea" name="text" id="editor-textarea"
+                                  placeholder="Enter your message for encryption/decryption"
+                                  data-check-field
+                                  th:text="${result} ?: ''"></textarea>
+                        <div class="form__editor-buttons">
+                            <label class="btn btn-editor">
+                                Open
+                                <input class="display-none" type="file" id="open">
+                            </label>
+                            <label class="btn btn-editor" id="clear" data-editor-button>Clear</label>
+                            <label class="btn btn-editor" id="save" data-editor-button>Save</label>
+                        </div>
+                    </div>
+                    <div class="form__posting">
+                        <div class="key__inner">
+                            <input class="input-key" type="text" name="key-number" placeholder="Key" pattern="^-?[0-9]+$"
+                                   data-check-field data-check-key>
+                        </div>
+                        <div class="posting__menu">
+                            <input class="btn btn-post" type="submit" formaction="/ceasar/encrypt-result"
+                                   formmethod="post" value="Encrypt" id="button-encrypt">
+                            <input class="btn btn-post" type="submit" formaction="/ceasar/decrypt-result"
+                                   formmethod="post" value="Decrypt" id="button-decrypt">
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+    <footer class="footer" th:insert="blocks/footer :: footer"></footer>
+</div>
+
+<script src="/js/app.js"></script>
+
+</body>
+</html>
