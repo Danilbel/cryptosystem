@@ -5,10 +5,10 @@ $(document).ready(function () {
     // Проверяем поля на пустоту при изменении их значений
     $('[data-check-field]').on('input', checkFields);
 
-    // Проверяем поля на пустоту при отправке формы
+
     $('#crypto-form').submit(function () {
         checkFields();
-        // Если поля пустые, отменяем отправку формы
+
         if ($('#button-encrypt, #button-decrypt').hasClass('disabled')) {
             return false;
         }
@@ -50,15 +50,20 @@ $(document).ready(function () {
     $('[data-check-radio]').on('change', function () {
         var selectedId = $(this).attr('id');
         addFormActionAttr(selectedId);
-
-        $('.key__inner').addClass('display-none');
-        $('#' + selectedId + '-key').removeClass('display-none');
-
+        $('.input-key').addClass('display-none');
+        if (selectedId === 'linear') {
+            $('#key-a').removeClass('display-none');
+            $('#key-b').removeClass('display-none');
+        } else if (selectedId === 'quadratic') {
+            $('#key-a').removeClass('display-none');
+            $('#key-b').removeClass('display-none');
+            $('#key-c').removeClass('display-none');
+        } else if (selectedId === 'slogan') {
+            $('#key-slogan').removeClass('display-none');
+        }
         checkFields();
     });
-
 });
-
 
 function addFormActionAttr(value) {
     const en = '/tritemius/encrypt-result';
@@ -71,8 +76,7 @@ function addFormActionAttr(value) {
 function checkFields() {
     let allKeysFilled = true;
     $('[data-check-key]').each(function () {
-        var parentId = $(this).parent().attr('id');
-        if ($(this).val() === '' && !$('#' + parentId).hasClass('display-none')) {
+        if ($(this).val() === '' && !$(this).hasClass('display-none')) {
             allKeysFilled = false;
             return false; // Выход из цикла each, если найден пустой элемент
         }
