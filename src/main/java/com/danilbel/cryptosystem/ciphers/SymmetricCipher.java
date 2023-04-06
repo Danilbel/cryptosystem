@@ -13,7 +13,7 @@ public class SymmetricCipher implements Cipher {
         return cipher(message, key, false);
     }
 
-    private String cipher(String message, Key key, boolean encrypt) {
+    protected String cipher(String message, Key key, boolean encrypt) {
         StringBuilder cripted = new StringBuilder();
         for (int i = 0; i < message.length(); i++) {
             cripted.append((char) (message.charAt(i) + (encrypt ? key.getKey() : -key.getKey())));

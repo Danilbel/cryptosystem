@@ -21,21 +21,19 @@ public class CeasarController {
 
     @PostMapping("/encrypt-result")
     public String encrypt(@RequestParam("text") String text, @RequestParam("key-number") String numberKey, Model model) {
-        String encrypted = crypt(text, numberKey, true);
-        model.addAttribute("result", encrypted);
-        return "ceasar";
+        return crypt(text, numberKey, true, model);
     }
 
     @PostMapping("/decrypt-result")
     public String decrypt(@RequestParam("text") String text, @RequestParam("key-number") String numberKey, Model model) {
-        String encrypted = crypt(text, numberKey, false);
-        model.addAttribute("result", encrypted);
-        return "ceasar";
+        return crypt(text, numberKey, false, model);
     }
 
-    private String crypt(String text, String key, boolean isEncrypt) {
+    private String crypt(String text, String key, boolean isEncrypt, Model model) {
         SymmetricCipher sc = new SymmetricCipher();
         Key k = new NumberKey(Long.parseLong(key));
-        return isEncrypt ? sc.encrypt(text, k) : sc.decrypt(text, k);
+        String result = isEncrypt ? sc.encrypt(text, k) : sc.decrypt(text, k);
+        model.addAttribute("result", result);
+        return "ceasar";
     }
 }
