@@ -1,7 +1,8 @@
 package com.danilbel.cryptosystem.controllers;
 
-import com.danilbel.cryptosystem.ciphers.XorCipher;
-import com.danilbel.cryptosystem.ciphers.key.*;
+import com.danilbel.cryptosystem.ciphers.symmetric.XorCipher;
+import com.danilbel.cryptosystem.ciphers.symmetric.key.GammaKey;
+import com.danilbel.cryptosystem.ciphers.symmetric.key.SymmetricCipherKey;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,7 +30,7 @@ public class GammaController {
 
     private String crypt(String text, String seed, Model model) {
         XorCipher xc = new XorCipher();
-        Key key = new GammaKey(Long.parseLong(seed), text.length());
+        SymmetricCipherKey key = new GammaKey(Long.parseLong(seed), text.length());
         String result = xc.encrypt(text, key);
         model.addAttribute("result", result);
         return "gamma";

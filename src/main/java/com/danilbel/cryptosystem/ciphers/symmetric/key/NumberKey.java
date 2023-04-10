@@ -1,6 +1,6 @@
-package com.danilbel.cryptosystem.ciphers.key;
+package com.danilbel.cryptosystem.ciphers.symmetric.key;
 
-public class NumberKey implements Key {
+public class NumberKey implements SymmetricCipherKey {
     protected final long a;
 
     public NumberKey(long a) {

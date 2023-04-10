@@ -1,4 +1,4 @@
-package com.danilbel.cryptosystem.ciphers.key;
+package com.danilbel.cryptosystem.ciphers.symmetric.key;
 
 public class QuadraticKey extends LinearKey {
     protected final long c;

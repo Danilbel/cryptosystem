@@ -1,10 +1,10 @@
-package com.danilbel.cryptosystem.ciphers.key;
+package com.danilbel.cryptosystem.ciphers.symmetric.key;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class GammaKey implements Key {
+public class GammaKey implements SymmetricCipherKey {
     private final List<Character> gamma;
     private int counter = 0;
 

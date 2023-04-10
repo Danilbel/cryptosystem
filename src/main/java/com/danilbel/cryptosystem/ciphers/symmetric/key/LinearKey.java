@@ -1,4 +1,4 @@
-package com.danilbel.cryptosystem.ciphers.key;
+package com.danilbel.cryptosystem.ciphers.symmetric.key;
 
 public class LinearKey extends NumberKey {
     protected long counter = 0;

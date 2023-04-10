@@ -1,6 +1,6 @@
-package com.danilbel.cryptosystem.ciphers.key;
+package com.danilbel.cryptosystem.ciphers.symmetric.key;
 
-public class SloganKey implements Key {
+public class SloganKey implements SymmetricCipherKey {
     private long counter = 0;
     private final String slogan;
 

@@ -1,8 +1,9 @@
 package com.danilbel.cryptosystem.controllers;
 
-import com.danilbel.cryptosystem.ciphers.SymmetricCipher;
-import com.danilbel.cryptosystem.ciphers.key.Key;
-import com.danilbel.cryptosystem.ciphers.key.NumberKey;
+import com.danilbel.cryptosystem.ciphers.symmetric.SymmetricCipher;
+import com.danilbel.cryptosystem.ciphers.symmetric.SymmetricCipherImpl;
+import com.danilbel.cryptosystem.ciphers.symmetric.key.SymmetricCipherKey;
+import com.danilbel.cryptosystem.ciphers.symmetric.key.NumberKey;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,8 +31,8 @@ public class CeasarController {
     }
 
     private String crypt(String text, String key, boolean isEncrypt, Model model) {
-        SymmetricCipher sc = new SymmetricCipher();
-        Key k = new NumberKey(Long.parseLong(key));
+        SymmetricCipher sc = new SymmetricCipherImpl();
+        SymmetricCipherKey k = new NumberKey(Long.parseLong(key));
         String result = isEncrypt ? sc.encrypt(text, k) : sc.decrypt(text, k);
         model.addAttribute("result", result);
         return "ceasar";
