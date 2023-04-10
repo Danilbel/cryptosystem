@@ -12,7 +12,7 @@ public class GammaKey implements Key {
         gamma = new ArrayList<>();
         Random random = new Random(seed);
         for (int i = 0; i < length; i++) {
-            gamma.add((char) random.nextInt(Character.MAX_VALUE));
+            gamma.add((char) random.nextInt(0, Character.MAX_VALUE / 2));
         }
     }
 
@@ -22,5 +22,4 @@ public class GammaKey implements Key {
         }
         return gamma.get(counter++);
     }
-
 }
