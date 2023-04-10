@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>CryptoSystem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/styles/main.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+    <header class="header" th:insert="blocks/header :: header"></header>
+    <main class="main">
+        <div class="container">
+            <section class="crypto">
+                <h2 class="crypto-title">Lit frag cipher</h2>
+                <form class="crypto__form" id="crypto-form">
+                    <div class="form__editor__inner">
+                        <div class="form__editor lit-frag-editor-key">
+                            <textarea class="form__editor-textarea textarea--lit-frag-key" type="text" name="key-lit"
+                                      placeholder="Enter your key"
+                                      data-check-field
+                                      data-check-key
+                                      th:text="${key} ?: ''"></textarea>
+                        </div>
+                        <div class="form__editor lit-frag-editor-text">
+                            <textarea class="form__editor-textarea textarea--lit-frag-text" name="text" id="editor-textarea"
+                                      placeholder="Enter your message for encryption/decryption"
+                                      data-check-field
+                                      th:text="${result} ?: ''"></textarea>
+                            <div class="form__editor-buttons buttons--lit-frag">
+                                <label class="btn btn-editor">
+                                    Open
+                                    <input class="display-none" type="file" id="open">
+                                </label>
+                                <label class="btn btn-editor" id="clear" data-editor-button>Clear</label>
+                                <label class="btn btn-editor" id="save" data-editor-button>Save</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__posting form__posting--lit-frag">
+                        <div class="posting__menu">
+                            <input class="btn btn-post" type="submit" formaction="/lit-frag/encrypt-result"
+                                   formmethod="post" value="Encrypt" id="button-encrypt">
+                            <input class="btn btn-post" type="submit" formaction="/lit-frag/decrypt-result"
+                                   formmethod="post" value="Decrypt" id="button-decrypt">
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+    <footer class="footer" th:insert="blocks/footer :: footer"></footer>
+</div>
+
+<script src="/js/app.js"></script>
+
+</body>
+</html>

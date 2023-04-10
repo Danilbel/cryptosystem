@@ -192,9 +192,23 @@ body {
   background-color: #ccaeae;
 }
 
+.form__editor__inner {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
 .form__editor {
   display: flex;
   margin-bottom: 18px;
+}
+
+.lit-frag-editor-key {
+  width: 40%;
+}
+
+.lit-frag-editor-text {
+  width: 60%;
 }
 
 .form__editor-textarea {
@@ -207,6 +221,14 @@ body {
   background-color: #ccaeae;
 }
 
+.textarea--lit-frag-text {
+  width: 70%;
+}
+
+.textarea--lit-frag-key {
+  width: 90%;
+}
+
 .form__editor-buttons {
   width: 20%;
   display: flex;
@@ -215,10 +237,18 @@ body {
   gap: 4px;
 }
 
+.buttons--lit-frag {
+  width: 30%;
+}
+
 .form__posting {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+}
+
+.form__posting--lit-frag {
+  justify-content: flex-end;
 }
 
 .posting__menu {
