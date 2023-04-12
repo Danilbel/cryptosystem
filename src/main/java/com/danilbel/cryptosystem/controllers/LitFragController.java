@@ -1,9 +1,5 @@
 package com.danilbel.cryptosystem.controllers;
 
-import com.danilbel.cryptosystem.ciphers.symmetric.SymmetricCipher;
-import com.danilbel.cryptosystem.ciphers.symmetric.SymmetricCipherImpl;
-import com.danilbel.cryptosystem.ciphers.symmetric.key.NumberKey;
-import com.danilbel.cryptosystem.ciphers.symmetric.key.SymmetricCipherKey;
 import com.danilbel.cryptosystem.ciphers.unsymmetric.litfrag.LitFragCipher;
 import com.danilbel.cryptosystem.ciphers.unsymmetric.litfrag.LitFragKey;
 import org.springframework.ui.Model;
