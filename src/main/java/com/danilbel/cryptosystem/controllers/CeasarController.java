@@ -21,12 +21,19 @@ public class CeasarController {
     }
 
     @PostMapping("/encrypt-result")
-    public String encrypt(@RequestParam("text") String text, @RequestParam("key-number") String numberKey, Model model) {
+    public String encrypt(
+            @RequestParam("text") String text,
+            @RequestParam("key-number") String numberKey,
+            Model model) {
+
         return crypt(text, numberKey, true, model);
     }
 
     @PostMapping("/decrypt-result")
-    public String decrypt(@RequestParam("text") String text, @RequestParam("key-number") String numberKey, Model model) {
+    public String decrypt(
+            @RequestParam("text") String text,
+            @RequestParam("key-number") String numberKey,
+            Model model) {
         return crypt(text, numberKey, false, model);
     }
 

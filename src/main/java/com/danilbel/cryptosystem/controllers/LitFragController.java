@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class LitFragController {
 
     @GetMapping("/")
-    public String showCaesar(Model model) {
+    public String showLitFrag(Model model) {
         return "lit-frag";
     }
 
