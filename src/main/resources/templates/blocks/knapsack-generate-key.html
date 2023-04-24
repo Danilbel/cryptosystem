@@ -1,0 +1,25 @@
+<div th:fragment="knapsack-generate-key">
+    <h2 class="crypto-title">Knapsack key generator</h2>
+    <div th:insert="blocks/knapsack-menu :: knapsack-menu"></div>
+    <form class="crypto__form" id="crypto-form">
+        <div class="form__posting margin-bottom-30">
+            <div class="key__inner">
+                <input class="input-key" type="text" name="length" placeholder="Length of key" id="generate-key-length"
+                       data-check-field>
+            </div>
+            <div class="posting__menu">
+                <input class="btn btn-post" type="submit" formaction="/knapsack/generate-result"
+                       formmethod="post" value="Generate" id="generate-key">
+            </div>
+        </div>
+        <div class="form__editor">
+            <textarea class="form__editor-textarea" name="text" id="editor-textarea"
+                      th:text="${result} ?: ''"
+                      data-check-field></textarea>
+            <div class="form__editor-buttons">
+                <label class="btn btn-editor" id="clear" data-editor-button>Clear</label>
+                <label class="btn btn-editor" id="save" data-editor-button>Save</label>
+            </div>
+        </div>
+    </form>
+</div>

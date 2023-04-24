@@ -99,4 +99,10 @@ function checkFields() {
         // Удаляем класс disabled у кнопок clear и save
         $('[data-editor-button]').removeClass('disabled');
     }
+
+    if($('#generate-key-length').val() === ''){
+        $('#generate-key').addClass('disabled');
+    } else {
+        $('#generate-key').removeClass('disabled');
+    }
 }

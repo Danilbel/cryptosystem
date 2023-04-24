@@ -1,0 +1,25 @@
+<div th:fragment="knapsack-crypt">
+    <h2 class="crypto-title">Knapsack cipher</h2>
+    <div th:insert="blocks/knapsack-menu :: knapsack-menu"></div>
+    <form class="crypto__form" id="crypto-form">
+        <div th:insert="blocks/form-editor :: form-editor"></div>
+        <div class="form__posting">
+            <div class="key__inner">
+                <input class="input-key width-500" type="text" name="key" placeholder="Key"
+                       data-check-field data-check-key>
+                <input th:if="${mode == 'decrypt'}" class="input-key width-140" type="text" name="key-m" placeholder="M"
+                       data-check-field data-check-key>
+                <input th:if="${mode == 'decrypt'}" class="input-key width-140" type="text" name="key-t" placeholder="T"
+                       data-check-field data-check-key>
+            </div>
+            <div class="posting__menu">
+                <input th:if="${mode == 'encrypt'}" class="btn btn-post" type="submit"
+                       formaction="/knapsack/encrypt-result"
+                       formmethod="post" value="Encrypt" id="button-encrypt">
+                <input th:if="${mode == 'decrypt'}" class="btn btn-post" type="submit"
+                       formaction="/knapsack/decrypt-result"
+                       formmethod="post" value="Decrypt" id="button-decrypt">
+            </div>
+        </div>
+    </form>
+</div>
